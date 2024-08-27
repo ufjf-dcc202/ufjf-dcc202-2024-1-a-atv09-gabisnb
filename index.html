@@ -12,7 +12,32 @@
     </main>
 </body>
 <script>
-    let joao = 1;
-    let maria = 2;
+    let joao = {
+        nome: "João",
+        qtd: 1,
+        comerMaca: function (){
+            this.qtd--;
+        }
+    };
+    let maria = {
+        nome: "Maria",
+        qtd: 2,
+        comerMaca: function (){
+            this.qtd--;
+        }
+    };
+
+    function deJoaoparaMaria() {
+        maria.qtd += joao.qtd;
+        joao.qtd = 0;
+    }
+
+    function deMariaparaJoao() {
+        joao.qtd += maria.qtd;
+        maria.qtd = 0;
+    }
+
+    deJoaoparaMaria();
+    maria.comerMaca();
 </script>
 </html>
